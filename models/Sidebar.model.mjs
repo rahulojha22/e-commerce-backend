@@ -10,7 +10,13 @@ const SidebarSchema = new Schema({
         },
         menuUrl: {
             type: String, required: true
-        }        
+        },
+        menuOrder: {
+            type: Number, required: true
+        },
+        isActive: {
+            type: Boolean, required: true
+        }
     },
     {
         timestamps: true

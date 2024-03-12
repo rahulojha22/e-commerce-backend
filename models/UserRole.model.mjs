@@ -11,9 +11,9 @@ const UserRoleSchema = new Schema({
         sideBarMenus: [{
             type: Schema.Types.ObjectId, ref: "UserSidebar"
         }],
-        permissions: {
+        permissions: [{
             type: Schema.Types.ObjectId, ref: "UserPermission"
-        }
+        }]
     },
     {
         timestamps: true

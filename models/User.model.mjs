@@ -14,14 +14,20 @@ const UserSchema = new Schema({
         userMoNum: {
             type: Number, required: true, unique: true
         },
-        userAddresses: {
+        userAddresses: [{
             type: Schema.Types.ObjectId, ref: "UserAddress"
-        },
+        }],
         userPassword: {
             type: String, required: true
         },
         userRole: {
             type: Schema.Types.ObjectId, ref: "Role", required: true
+        },
+        userStores: [{
+            type: Schema.Types.ObjectId, ref: "Store"
+        }],
+        currentStore: {
+            type: Schema.Types.ObjectId, ref: "Store"
         },
         loginToken: {
             type: String
@@ -42,5 +48,5 @@ const UserSchema = new Schema({
     }
 );
 
-export const User = mongoose.model('user', UserSchema);
+export const User = mongoose.model('User', UserSchema);
 User.createIndexes();

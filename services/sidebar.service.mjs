@@ -47,3 +47,21 @@ export const GetUserSidebarList = async(data)=>{
         return error
     }      
 }
+
+export const UpdateSidebar = async(data)=>{    
+    try {
+        let updateRow = await Sidebar.updateOne(data);
+        return updateRow;
+    } catch (error) {
+        return error
+    }      
+}
+
+export const DeleteSidebar = async(data)=>{    
+    try {
+        let deleteRow = await Sidebar.deleteOne(data);
+        return deleteRow;
+    } catch (error) {
+        return error
+    }      
+}

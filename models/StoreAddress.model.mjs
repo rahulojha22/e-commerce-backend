@@ -1,16 +1,13 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-const UserAddressSchema = new Schema({
-        userId: {
-            type: Schema.Types.ObjectId, ref: "User", required: true        
+const StoreAddressSchema = new Schema({
+        storeId: {
+            type: Schema.Types.ObjectId, ref: "Store", required: true        
         },
         addressType: {
             type: String, required: true        
-        },
-        defaultAddress: {
-            type: Boolean, required: true        
-        },
+        },        
         addressLine1: {
             type: String
         },
@@ -35,5 +32,5 @@ const UserAddressSchema = new Schema({
     }
 );
 
-export const UserAddress = mongoose.model('UserAddress', UserAddressSchema);
-UserAddress.createIndexes();
+export const StoreAddress = mongoose.model('StoreAddress', StoreAddressSchema);
+StoreAddress.createIndexes();

@@ -11,4 +11,4 @@ app.use(bodyParser.json());
 
 // app.use('/hom', Service.tokenService1.generateToken);
 app.use('/pub', pub_router);
-app.use('/user', AuthRouter);
+app.use('/auth', AuthRouter);
